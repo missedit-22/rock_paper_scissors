@@ -10,7 +10,6 @@ class NewGame(object):
     def turn(self):
         while self.round < int(self.num_rounds):
             self.comp_choice = randrange(1, 4)
-            print(self.comp_choice)
             self.choice = int(raw_input("Rock? [1] Paper? [2] Scissors? [3]"))
             self.round += 1
             game.who_won(self.choice, self.comp_choice)
