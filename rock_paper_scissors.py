@@ -10,7 +10,7 @@ class NewGame(object):
     def turn(self):
         while self.round < int(self.num_rounds):
             self.comp_choice = randrange(1, 4)
-            self.choice = int(raw_input("Rock? [1] Paper? [2] Scissors? [3]"))
+            self.choice = int(raw_input("Rock? [1] Paper? [2] Scissors? [3] "))
             self.round += 1
             game.who_won(self.choice, self.comp_choice)
             print(self.player_score, self.comp_score)
@@ -52,7 +52,7 @@ class NewGame(object):
             print("It was a tie!")  
             
 def start_menu():
-    num_rounds = raw_input("How many rounds?")
+    num_rounds = raw_input("How many rounds? ")
     global game
     game = NewGame(num_rounds)
     game.turn()
