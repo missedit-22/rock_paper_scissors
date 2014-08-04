@@ -58,6 +58,5 @@ def start_menu():
     game = NewGame(num_rounds)
     game.turn()
     
-    
 start_menu()
 
