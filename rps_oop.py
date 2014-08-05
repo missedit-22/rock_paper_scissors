@@ -8,6 +8,7 @@ class NewGame(object):
     def round(self):
         human_choice = human_player.choose()
         comp_choice = comp_player.choose()
+        decide_winner()
         
     
 class Player(object):
@@ -52,11 +53,7 @@ def who_won(score1, score2):
         
 
 
-def round():
-    
-    
-    human_player.choose()
-    comp_player.choose()
+def decide_winner():
     
     if human_player.choice == comp_player.comp_choice:
         print("It was a tie.")
@@ -91,7 +88,7 @@ def game_play():
     human_player = Player()
     comp_player = ComputerPlayer()   
     while game.current_round < int(num_rounds):
-        round()
+        game.round()
         print "COMPUTER: ", comp_player.score, "HUMAN: ",human_player.score
     who_won(human_player.score, comp_player.score)
     
