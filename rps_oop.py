@@ -24,8 +24,7 @@ class Player(object):
         self.score += 1
         
     def win_game(self):
-        print("YOU WON!")
-        
+        print("YOU WON!")     
     
 
 class ComputerPlayer(Player):
@@ -38,8 +37,6 @@ class ComputerPlayer(Player):
         print("THE COMPUTER WON!")
         
         
-
-
 def who_won(score1, score2):
     human_player_score = score1
     comp_player_score = score2
@@ -51,8 +48,6 @@ def who_won(score1, score2):
         print ("IT WAS A TIE!")
         
         
-
-
 def decide_winner():
     
     if human_player.choice == comp_player.comp_choice:
@@ -77,7 +72,6 @@ def decide_winner():
         comp_player.win_round()
     game.current_round += 1
     
-
 
 def game_play():
     num_rounds = raw_input("How many rounds? ")
