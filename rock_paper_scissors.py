@@ -12,9 +12,9 @@ class NewGame(object):
             self.comp_choice = randrange(1, 4)
             self.choice = int(raw_input("Rock? [1] Paper? [2] Scissors? [3] "))
             self.round += 1
-            game.who_won(self.choice, self.comp_choice)
+            self.who_won(self.choice, self.comp_choice)
             print(self.player_score, self.comp_score)
-        game.final_score(self.player_score, self.comp_score)
+        self.final_score(self.player_score, self.comp_score)
                 
                     
     def who_won(self, choice, comp_choice):
@@ -53,7 +53,6 @@ class NewGame(object):
             
 def start_menu():
     num_rounds = raw_input("How many rounds? ")
-    global game
     game = NewGame(num_rounds)
     game.turn()
     
