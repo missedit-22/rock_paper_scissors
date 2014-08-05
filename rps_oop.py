@@ -4,7 +4,7 @@ class NewGame(object):
     def __init__(self, num_rounds):
         self.num_rounds = num_rounds
         self.current_round = 0
-    
+        
     
 class Player(object):
     def __init__(self):
@@ -25,18 +25,19 @@ class ComputerPlayer(Player):
         
 
 
-def who_won():
-    if human_player.score > comp_player.score:
+def who_won(score1, score2):
+    human_player_score = score1
+    comp_player_score = score2
+    if human_player_score > comp_player_score:
         human_player.win_game()
-    if human_player.score < comp_player.score:
+    if human_player_score < comp_player_score:
         comp_player.win_game()
-    if human_player.score == comp_player.score:
+    if human_player_score == comp_player_score:
         print ("IT WAS A TIE!")
 
 def round():
     
     comp_choice = randrange(1, 4)
-    print(comp_choice)
     choice = int(raw_input("Rock [1] Paper [2] Scissors [3]"))
     
     if choice == comp_choice:
@@ -70,12 +71,11 @@ def game_play():
     global human_player
     global comp_player
     human_player = Player()
-    comp_player = ComputerPlayer()
+    comp_player = ComputerPlayer()   
     while game.current_round < int(num_rounds):
         round()
-        print comp_player.score
-        print human_player.score
-    who_won()
+        print "COMPUTER: ", comp_player.score, "HUMAN: ",human_player.score
+    who_won(human_player.score, comp_player.score)
     
     
 
