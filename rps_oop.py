@@ -79,7 +79,7 @@ def game_play():
     
     
 
-game_play()  
-
+if __name__ == '__main__':
+    game_play()
 	
         
